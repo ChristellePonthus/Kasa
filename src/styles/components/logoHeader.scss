@@ -1,0 +1,16 @@
+.logoHeader {
+  @include verticalCenter;
+  margin: 5px;
+  width: 210px;
+  height: 68px;
+  padding: 5px 0;
+  background: url(../../assets/img/logo.svg) no-repeat;
+
+  img {
+    height: 68px;
+  }
+  h3 {
+    margin-left: 10px;
+    color: $primary-color;
+  }
+}

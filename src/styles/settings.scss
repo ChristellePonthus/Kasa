@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../assets/fonts/Montserrat.ttf);
+}
+
+$font-1: "Montserrat", sans-serif;
+
+$primary-color: #ff6060;
+$color-2: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(0, 0, 0, 0.5) 100%
+);
+$color-3: #f6f6f6;
+$color-4: #c4c4c4;
+$white: rgb(243, 243, 243);
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $white;
+  font-family: $font-1;
+  margin: 0 100px;
+  // @include verticalCenter;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: $primary-color;
+}

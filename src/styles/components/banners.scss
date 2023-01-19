@@ -1,0 +1,29 @@
+.banner {
+  height: 223px;
+  left: 100px;
+  top: 171px;
+  border-radius: 25px;
+  ::after {
+    opacity: 0.3;
+    background-color: #000000;
+    mix-blend-mode: darken;
+  }
+  .bannerImg {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    background-image: url(../../assets/img/homeBanner.png);
+    h2 {
+      color: #ffffff;
+      font-size: 48px;
+      font-weight: 500;
+      position: absolute;
+      z-index: 1;
+      margin: 0 auto;
+      left: 21%;
+      top: 37%;
+      height: 15%;
+    }
+  }
+}
