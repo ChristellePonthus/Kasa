@@ -7,10 +7,6 @@ const Dropdowns = ({ dropdown, logement }) => {
 
   const [isOpen, setIsOpen] = useState(true);
 
-  // function handleClick() {
-  //   setOpen(!open);
-  // }
-
   if (url.pathname === "/about") {
     return isOpen ? (
       <section>
@@ -33,19 +29,42 @@ const Dropdowns = ({ dropdown, logement }) => {
       </section>
     );
   } else {
-    return (
-      <article>
+    return isOpen ? (
+      <section className="logementDropdowns">
         <div className="logementDropdown" key={logement.id}>
-          <div className="logementDropdownTitle">
-            Equipements
-            <div className="logementDropdownDesc">{logement.equipments}</div>
+          <button onClick={() => setIsOpen(false)}>
+            <span className="logementDropdownTitle">Description</span>
+            <div className="buttonImg"></div>
+          </button>
+        </div>
+        <div className="logementDropdown" key={logement.id}>
+          <button onClick={() => setIsOpen(false)}>
+            <span className="logementDropdownTitle">Equipements</span>
+            <div className="buttonImg"></div>
+          </button>
+        </div>
+      </section>
+    ) : (
+      <section className="logementDropdowns">
+        <div className="logementDropdown" key={logement.id}>
+          <button onClick={() => setIsOpen(true)}>
+            <span className="logementDropdownTitle">Description</span>
+            <div className="buttonImg"></div>
+          </button>
+          <div className="logementDropdownDesc">{logement.description}</div>
+        </div>
+        <div className="logementDropdown" key={logement.id}>
+          <button onClick={() => setIsOpen(true)}>
+            <span className="logementDropdownTitle">Equipements</span>
+            <div className="buttonImg"></div>
+          </button>
+          <div className="logementDropdownDesc">
+            {logement.equipments.map(() => (
+              <div>{logement.equipments[0]}</div>
+            ))}
           </div>
         </div>
-        {/* <button onClick={handleClick}>Description</button>
-        {open ? <div>{logement.description}</div> : null}
-        <button onClick={handleClick}>Equipements</button>
-        {open ? <div>{logement.equipments}</div> : null} */}
-      </article>
+      </section>
     );
   }
 };

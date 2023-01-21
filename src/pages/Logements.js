@@ -611,9 +611,14 @@ const Logements = () => {
   return (
     <div>
       <Header />
-      <Carrousel />
-      {/* <Dropdowns /> */}
-      <div>id = {selectedId}</div>
+      <section>
+        {logements
+          .filter((logement) => logement.id.includes(selectedId))
+          .map((logement, selectedId) => (
+            <Carrousel key={selectedId} logement={logement} />
+          ))}
+      </section>
+
       <section>
         {logements
           .filter((logement) => logement.id.includes(selectedId))
@@ -621,7 +626,6 @@ const Logements = () => {
             <Dropdowns key={selectedId} logement={logement} />
           ))}
       </section>
-
       <Footer />
     </div>
   );

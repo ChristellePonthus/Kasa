@@ -1,32 +1,67 @@
+%button {
+  height: 50px;
+  border-radius: 5px;
+  background-color: $color-1;
+  width: 100%;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  color: $white;
+}
+
+%buttonImg {
+  color: $white;
+  height: 25px;
+  width: 25px;
+  background: url(../../assets/img/arrow.svg) center/cover;
+}
+
+%dropdownDesc {
+  color: $color-1;
+  background-color: $color-3;
+  padding: 20px;
+}
+
 .aboutDropdown {
   margin: 30px 200px;
   button {
-    height: 50px;
-    border-radius: 5px;
-    background-color: $color-1;
-    width: 100%;
-    border: none;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    justify-content: space-between;
+    @extend %button;
     .aboutDropdownTitle {
       font-size: 24px;
-      color: $white;
     }
     .buttonImg {
-      color: $white;
-      height: 25px;
-      width: 25px;
-      background: url(../../assets/img/arrow.svg) center/cover;
+      @extend %buttonImg;
     }
   }
 
   .aboutDropdownDesc {
     font-size: 24px;
-    color: $color-1;
-    background-color: $color-3;
-    padding: 20px;
+    @extend %dropdownDesc;
+  }
+}
+
+.logementDropdowns {
+  display: flex;
+  margin: 30px 60px;
+  .logementDropdown {
+    width: 580px;
+    margin: 0 40px;
+    button {
+      @extend %button;
+      .logementDropdownTitle {
+        font-size: 18px;
+      }
+      .buttonImg {
+        @extend %buttonImg;
+      }
+    }
+  }
+  .logementDropdownDesc {
+    @extend %dropdownDesc;
+    font-size: 18px;
+    height: 250px;
   }
 }
