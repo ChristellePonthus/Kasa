@@ -1,5 +1,5 @@
 import React from "react";
-import HomeBanner from "../components/HomeBanner";
+import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Galery from "../components/Galery";
 import Header from "../components/Header";
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <HomeBanner />
+      <Banner />
       <Galery />
       <Footer />
     </div>

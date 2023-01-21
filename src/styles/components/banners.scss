@@ -1,19 +1,24 @@
+%bannerImg {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
 .banner {
   height: 223px;
   left: 100px;
   top: 171px;
   border-radius: 25px;
+  margin: 0 100px;
   ::after {
     opacity: 0.3;
     background-color: #000000;
     mix-blend-mode: darken;
   }
-  .bannerImg {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
+  .homeBannerImg {
+    @extend %bannerImg;
     position: relative;
-    background-image: url(../../assets/img/homeBanner.png);
+    background: url(../../assets/img/homeBanner.png) center/cover;
     h2 {
       color: #ffffff;
       font-size: 48px;
@@ -25,5 +30,9 @@
       top: 37%;
       height: 15%;
     }
+  }
+  .aboutBannerImg {
+    @extend %bannerImg;
+    background: url(../../assets/img/aboutBanner.png) center/cover;
   }
 }

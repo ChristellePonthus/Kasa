@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-const ErrorPage = () => {
+const PageNotFound = () => {
   return (
     <div>
       <Header />
@@ -21,4 +21,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default PageNotFound;

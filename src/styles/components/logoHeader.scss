@@ -1,5 +1,4 @@
 .logoHeader {
-  @include verticalCenter;
   margin: 5px;
   width: 210px;
   height: 68px;
@@ -11,6 +10,6 @@
   }
   h3 {
     margin-left: 10px;
-    color: $primary-color;
+    color: $color-1;
   }
 }
