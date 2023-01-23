@@ -29,6 +29,9 @@ const Dropdowns = ({ dropdown, logement }) => {
       </section>
     );
   } else {
+    const equipments = logement.equipments.map((equipment, index) => (
+      <li key={index}>{equipment}</li>
+    ));
     return isOpen ? (
       <section className="logementDropdowns">
         <div className="logementDropdown" key={logement.id}>
@@ -45,23 +48,21 @@ const Dropdowns = ({ dropdown, logement }) => {
         </div>
       </section>
     ) : (
-      <section className="logementDropdowns">
-        <div className="logementDropdown" key={logement.id}>
+      <section className="logementDropdowns" key={logement.id}>
+        <div className="logementDropdown">
           <button onClick={() => setIsOpen(true)}>
             <span className="logementDropdownTitle">Description</span>
             <div className="buttonImg"></div>
           </button>
           <div className="logementDropdownDesc">{logement.description}</div>
         </div>
-        <div className="logementDropdown" key={logement.id}>
+        <div className="logementDropdown">
           <button onClick={() => setIsOpen(true)}>
             <span className="logementDropdownTitle">Equipements</span>
             <div className="buttonImg"></div>
           </button>
           <div className="logementDropdownDesc">
-            {logement.equipments.map(() => (
-              <div>{logement.equipments[0]}</div>
-            ))}
+            <ul>{equipments}</ul>
           </div>
         </div>
       </section>

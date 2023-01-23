@@ -1,0 +1,61 @@
+.logementTitle {
+  margin: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  .title {
+    font-size: 36px;
+    font-weight: 500;
+    color: $color-1;
+  }
+  .location {
+    font-size: 18px;
+  }
+  .tags {
+    display: flex;
+    .tag {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 115px;
+      height: 25px;
+      background-color: $color-1;
+      color: $white;
+      font-size: 14px;
+      margin: 20px 10px 0 0;
+      border-radius: 10px;
+    }
+  }
+  .host {
+    display: flex;
+    align-items: center;
+    .hostName {
+      font-size: 18px;
+      color: $color-1;
+      margin: 0 10px;
+    }
+    .hostPicture {
+      height: 64px;
+      width: 64px;
+      border-radius: 50%;
+    }
+  }
+  .rating {
+    display: flex;
+    justify-content: flex-end;
+    %star {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+    .orangeStar {
+      @extend %star;
+      color: $color-1;
+      background: url(../../assets/img/orangeStar.png) center;
+    }
+    .greyStar {
+      @extend %star;
+      color: $color-3;
+      background: url(../../assets/img/greyStar.png) center;
+    }
+  }
+}
