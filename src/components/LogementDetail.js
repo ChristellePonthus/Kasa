@@ -1,10 +1,9 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Carrousel from "./Carrousel";
 import Dropdowns from "./Dropdowns";
-import LogementTitleDetails from "./LogementTitleDetails";
+import LogementTitle from "./LogementTitle";
+import TestDrop from "./TestDrop";
 
 const LogementDetail = () => {
   const idUrl = useParams(); // {id: ':c67ab8a7'}
@@ -592,24 +591,18 @@ const LogementDetail = () => {
     },
   ];
 
-  //   const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  //   useEffect(() => {
-  //     fetch("logements.json")
-  //       .then(function (response) {
-  //         if (response.ok) {
-  //           console.log("response", response);
-  //           return response.json();
-  //         }
-  //       })
-  //       .then(function (data) {
-  //         console.log("logements", data);
-  //         setData(data);
-  //       })
-  //       .catch((error) => console.error(error));
-  //   });
+  // useEffect(() => {
+  //   fetch("logements.json")
+  //     .then((res) => res.json())
+  //     .then(function (data) {
+  //       setData(data);
+  //     })
+  //     .catch((error) => console.error(error));
+  // });
 
-  //   console.log(data.id);
+  // console.log("data", data);
 
   return (
     <div>
@@ -622,14 +615,36 @@ const LogementDetail = () => {
       {logements
         .filter((logement) => logement.id.includes(selectedId))
         .map((logement, selectedId) => (
-          <LogementTitleDetails key={selectedId} logement={logement} />
+          <LogementTitle key={selectedId} logement={logement} />
         ))}
 
-      {logements
+      {/* {logements
         .filter((logement) => logement.id.includes(selectedId))
         .map((logement, selectedId) => (
           <Dropdowns key={selectedId} logement={logement} />
-        ))}
+        ))} */}
+
+      <section className="logementDropdowns">
+        {logements
+          .filter((logement) => logement.id.includes(selectedId))
+          .map((dropdown, key) => (
+            <TestDrop
+              key={key}
+              title={"Description"}
+              description={dropdown.description}
+            />
+          ))}
+
+        {logements
+          .filter((logement) => logement.id.includes(selectedId))
+          .map((dropdown, key) => (
+            <TestDrop
+              key={key}
+              title={"Equipements"}
+              description={dropdown.equipments}
+            />
+          ))}
+      </section>
     </div>
   );
 };

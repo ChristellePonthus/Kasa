@@ -3,28 +3,24 @@ import { useLocation } from "react-router-dom";
 
 const Dropdowns = ({ dropdown, logement }) => {
   const url = useLocation();
-  console.log(url.pathname);
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   if (url.pathname === "/about") {
-    return isOpen ? (
+    return (
       <section>
         <div className="aboutDropdown" key={dropdown.title}>
-          <button onClick={() => setIsOpen(false)}>
+          <button onClick={handleOpen}>
             <span className="aboutDropdownTitle">{dropdown.title}</span>
             <div className="buttonImg"></div>
           </button>
-        </div>
-      </section>
-    ) : (
-      <section>
-        <div className="aboutDropdown" key={dropdown.title}>
-          <button onClick={() => setIsOpen(true)}>
-            <span className="aboutDropdownTitle">{dropdown.title}</span>
-            <div className="buttonImg"></div>
-          </button>
-          <div className="aboutDropdownDesc">{dropdown.description}</div>
+          {isOpen ? (
+            <div className="aboutDropdownDesc">{dropdown.description}</div>
+          ) : null}
         </div>
       </section>
     );
@@ -32,38 +28,27 @@ const Dropdowns = ({ dropdown, logement }) => {
     const equipments = logement.equipments.map((equipment, index) => (
       <li key={index}>{equipment}</li>
     ));
-    return isOpen ? (
-      <section className="logementDropdowns">
-        <div className="logementDropdown" key={logement.id}>
-          <button onClick={() => setIsOpen(false)}>
-            <span className="logementDropdownTitle">Description</span>
-            <div className="buttonImg"></div>
-          </button>
-        </div>
-        <div className="logementDropdown" key={logement.id}>
-          <button onClick={() => setIsOpen(false)}>
-            <span className="logementDropdownTitle">Equipements</span>
-            <div className="buttonImg"></div>
-          </button>
-        </div>
-      </section>
-    ) : (
+    return (
       <section className="logementDropdowns" key={logement.id}>
         <div className="logementDropdown">
-          <button onClick={() => setIsOpen(true)}>
+          <button onClick={handleOpen}>
             <span className="logementDropdownTitle">Description</span>
             <div className="buttonImg"></div>
           </button>
-          <div className="logementDropdownDesc">{logement.description}</div>
+          {isOpen ? (
+            <div className="logementDropdownDesc">{logement.description}</div>
+          ) : null}
         </div>
         <div className="logementDropdown">
-          <button onClick={() => setIsOpen(true)}>
+          <button onClick={handleOpen}>
             <span className="logementDropdownTitle">Equipements</span>
             <div className="buttonImg"></div>
           </button>
-          <div className="logementDropdownDesc">
-            <ul>{equipments}</ul>
-          </div>
+          {isOpen ? (
+            <div className="logementDropdownDesc">
+              <ul>{equipments}</ul>
+            </div>
+          ) : null}
         </div>
       </section>
     );

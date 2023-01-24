@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Dropdowns from "../components/Dropdowns";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import TestDrop from "../components/TestDrop";
 
 const About = () => {
   const aboutDropdowns = [
@@ -32,10 +33,20 @@ const About = () => {
     <div>
       <Header />
       <Banner />
-      {/* <Dropdowns /> */}
-      {aboutDropdowns.map((dropdown, title) => (
+      {/* {aboutDropdowns.map((dropdown, title) => (
         <Dropdowns key={title} dropdown={dropdown} />
-      ))}
+      ))} */}
+
+      <section className="aboutDropdowns">
+        {aboutDropdowns.map((dropdown, key) => (
+          <TestDrop
+            key={key}
+            title={dropdown.title}
+            description={dropdown.description}
+          />
+        ))}
+      </section>
+
       <Footer />
     </div>
   );
