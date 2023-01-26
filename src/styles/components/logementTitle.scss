@@ -16,22 +16,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 115px;
       height: 25px;
       background-color: $color-1;
       color: $white;
       font-size: 14px;
       margin: 20px 10px 0 0;
+      padding: 0 15px;
       border-radius: 10px;
     }
   }
   .host {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     .hostName {
       font-size: 18px;
       color: $color-1;
       margin: 0 10px;
+      text-align: right;
     }
     .hostPicture {
       height: 64px;

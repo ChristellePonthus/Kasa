@@ -3,11 +3,7 @@
   height: 340px;
   width: 340px;
   border-radius: 10px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+
   margin: 25px 30px;
 
   transition: 0.3s;
@@ -48,10 +44,15 @@
     transform: scaleY(0);
     transition: 0.3s;
   }
-  img {
+  .img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
 }
