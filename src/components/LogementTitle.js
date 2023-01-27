@@ -3,7 +3,7 @@ import React from "react";
 const LogementTitle = ({ logement }) => {
   //Loste des tags
   const tags = logement.tags.map((tag, index) => (
-    <li className="tag" key={index}>
+    <li key={index} className="tag">
       {tag}
     </li>
   ));

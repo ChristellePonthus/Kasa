@@ -1,58 +1,32 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
+import { useState } from "react";
 
-const Dropdowns = ({ dropdown, logement }) => {
-  const url = useLocation();
-
+const Dropdowns = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
 
-  if (url.pathname === "/about") {
-    return (
-      <section>
-        <div className="aboutDropdown" key={dropdown.title}>
-          <button onClick={handleOpen}>
-            <span className="aboutDropdownTitle">{dropdown.title}</span>
-            <div className="buttonImg"></div>
-          </button>
-          {isOpen ? (
-            <div className="aboutDropdownDesc">{dropdown.description}</div>
-          ) : null}
-        </div>
-      </section>
-    );
-  } else {
-    const equipments = logement.equipments.map((equipment, index) => (
+  let description;
+
+  if (Array.isArray(props.description)) {
+    description = props.description.map((equipment, index) => (
       <li key={index}>{equipment}</li>
     ));
-    return (
-      <section className="logementDropdowns" key={logement.id}>
-        <div className="logementDropdown">
-          <button onClick={handleOpen}>
-            <span className="logementDropdownTitle">Description</span>
-            <div className="buttonImg"></div>
-          </button>
-          {isOpen ? (
-            <div className="logementDropdownDesc">{logement.description}</div>
-          ) : null}
-        </div>
-        <div className="logementDropdown">
-          <button onClick={handleOpen}>
-            <span className="logementDropdownTitle">Equipements</span>
-            <div className="buttonImg"></div>
-          </button>
-          {isOpen ? (
-            <div className="logementDropdownDesc">
-              <ul>{equipments}</ul>
-            </div>
-          ) : null}
-        </div>
-      </section>
-    );
+  } else {
+    description = props.description;
   }
+
+  return (
+    <div className="dropdown" key={props.title}>
+      <button onClick={handleOpen}>
+        <span className="dropdownTitle">{props.title}</span>
+        <div className={isOpen ? "arrowUp" : "arrowDown"}></div>
+      </button>
+      {isOpen ? <div className="dropdownDesc">{description}</div> : null}
+    </div>
+  );
 };
 
 export default Dropdowns;

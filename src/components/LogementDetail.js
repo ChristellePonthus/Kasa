@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Carrousel from "./Carrousel";
 import Dropdowns from "./Dropdowns";
 import LogementTitle from "./LogementTitle";
-import TestDrop from "./TestDrop";
 
 const LogementDetail = () => {
   const idUrl = useParams(); // {id: ':c67ab8a7'}
@@ -618,27 +617,21 @@ const LogementDetail = () => {
           <LogementTitle key={selectedId} logement={logement} />
         ))}
 
-      {/* {logements
-        .filter((logement) => logement.id.includes(selectedId))
-        .map((logement, selectedId) => (
-          <Dropdowns key={selectedId} logement={logement} />
-        ))} */}
-
+      {/* Appel des Dropdowns */}
       <section className="logementDropdowns">
         {logements
           .filter((logement) => logement.id.includes(selectedId))
           .map((dropdown, key) => (
-            <TestDrop
+            <Dropdowns
               key={key}
               title={"Description"}
               description={dropdown.description}
             />
           ))}
-
         {logements
           .filter((logement) => logement.id.includes(selectedId))
           .map((dropdown, key) => (
-            <TestDrop
+            <Dropdowns
               key={key}
               title={"Equipements"}
               description={dropdown.equipments}

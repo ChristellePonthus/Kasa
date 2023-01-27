@@ -6,4 +6,12 @@
   align-items: center;
   background-color: #000000;
   color: #ffffff;
+  .logoFooter {
+    width: 120px;
+    height: 40px;
+    background: url(../../assets/img/logofooter.png) no-repeat;
+    img {
+      height: 40px;
+    }
+  }
 }

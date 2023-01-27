@@ -3,7 +3,6 @@ import Banner from "../components/Banner";
 import Dropdowns from "../components/Dropdowns";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import TestDrop from "../components/TestDrop";
 
 const About = () => {
   const aboutDropdowns = [
@@ -32,14 +31,13 @@ const About = () => {
   return (
     <div>
       <Header />
-      <Banner />
-      {/* {aboutDropdowns.map((dropdown, title) => (
-        <Dropdowns key={title} dropdown={dropdown} />
-      ))} */}
 
+      <Banner />
+
+      {/* Appel des Dropdowns */}
       <section className="aboutDropdowns">
         {aboutDropdowns.map((dropdown, key) => (
-          <TestDrop
+          <Dropdowns
             key={key}
             title={dropdown.title}
             description={dropdown.description}

@@ -1,11 +1,10 @@
 import React from "react";
-import LogoHeader from "./LogoHeader";
 import Navigation from "./Navigation";
 
 const Header = () => {
   return (
     <div className="header">
-      <LogoHeader />
+      <div className="logoHeader"></div>;
       <Navigation />
     </div>
   );
