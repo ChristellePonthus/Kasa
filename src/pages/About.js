@@ -32,7 +32,7 @@ const About = () => {
     <div>
       <Header />
 
-      <Banner />
+      <Banner className={"aboutBannerImg"} />
 
       {/* Appel des Dropdowns */}
       <section className="aboutDropdowns">

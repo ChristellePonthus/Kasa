@@ -27,3 +27,9 @@
     background: url(../../assets/img/rightArrow.png);
   }
 }
+
+@media (max-width: 769px) {
+  .carrousel {
+    margin: 40px 20px;
+  }
+}

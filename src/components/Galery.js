@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "./Card";
+import Logements from "../assets/logements.json";
+import useFetchAPI from "../hooks/useFetchAPI";
 
 const Galery = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("logements.json")
-      .then((res) => res.json())
-      .then(function (data) {
-        setData(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+  useFetchAPI(Logements);
 
   return (
     <section className="gallery">
-      {data.map((logement, id) => (
+      {Logements.map((logement, id) => (
         <Card key={id} logement={logement} />
       ))}
     </section>

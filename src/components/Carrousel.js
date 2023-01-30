@@ -22,8 +22,12 @@ const Carrousel = ({ logement }) => {
       <div className="img">
         <img src={logement.pictures[currentIndex]} alt={logement.title} />
       </div>
-      <button onClick={goToPrev} className="leftArrow" />
-      <button onClick={goToNext} className="rightArrow" />
+      {logement.pictures.length > 1 ? (
+        <>
+          <button onClick={goToPrev} className="leftArrow" />
+          <button onClick={goToNext} className="rightArrow" />
+        </>
+      ) : null}
     </section>
   );
 };

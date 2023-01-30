@@ -1,7 +1,17 @@
 %bannerImg {
   height: 100%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 25px;
+  %filter {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    top: 0;
+    position: absolute;
+    background-color: $color-6;
+    opacity: 0.3;
+    mix-blend-mode: darken;
+  }
 }
 
 .banner {
@@ -10,29 +20,64 @@
   top: 171px;
   border-radius: 25px;
   margin: 0 100px;
-  ::after {
-    opacity: 0.3;
-    background-color: #000000;
-    mix-blend-mode: darken;
-  }
   .homeBannerImg {
     @extend %bannerImg;
     position: relative;
     background: url(../../assets/img/homeBanner.png) center/cover;
-    h2 {
-      color: #ffffff;
-      font-size: 48px;
-      font-weight: 500;
-      position: absolute;
-      z-index: 1;
-      margin: 0 auto;
-      left: 21%;
-      top: 37%;
-      height: 15%;
+    .filter {
+      @extend %filter;
+      h2 {
+        color: #ffffff;
+        font-size: 48px;
+        font-weight: 500;
+        position: absolute;
+        z-index: 1;
+        margin: 0 auto;
+        left: 21%;
+        top: 37%;
+        height: 15%;
+      }
     }
   }
   .aboutBannerImg {
     @extend %bannerImg;
+    position: relative;
     background: url(../../assets/img/aboutBanner.png) center/cover;
+    .filter {
+      @extend %filter;
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  %banner376 {
+    margin: 0 20px;
+    height: 111px;
+  }
+  .banner {
+    @extend %banner376;
+    .homeBannerImg {
+      border-radius: 10px;
+      .filter {
+        border-radius: 10px;
+        h2 {
+          font-size: 24px;
+          left: 5%;
+          top: 25%;
+          width: 80%;
+        }
+      }
+    }
+  }
+  .aboutBannerImg {
+    border-radius: 10px;
+    .filter {
+      border-radius: 10px;
+      h2 {
+        font-size: 24px;
+        left: 5%;
+        top: 25%;
+      }
+    }
   }
 }

@@ -1,20 +1,46 @@
-.header {
+header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 40px 100px;
   .logoHeader {
-    margin: 5px;
     width: 210px;
     height: 68px;
-    padding: 5px 0;
     background: url(../../assets/img/headerLogo.png) no-repeat;
-
-    img {
-      height: 68px;
-    }
+    background-size: 100%;
     h3 {
       margin-left: 10px;
       color: $color-1;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    margin: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    margin: 20px 40px;
+  }
+}
+
+@media (max-width: 426px) {
+  header {
+    .logoHeader {
+      width: 145px;
+      height: 47px;
+      img {
+        height: 47px;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  header {
+    margin: 20px;
   }
 }

@@ -11,8 +11,8 @@ const LogementTitle = ({ logement }) => {
   //Vote
   const rate = parseInt(logement.rating);
   const starRates = [];
-  const orangeStar = <span className="orangeStar"></span>;
-  const greyStar = <span className="greyStar"></span>;
+  const orangeStar = "orangeStar";
+  const greyStar = "greyStar";
 
   for (let i = 0; i < rate; i++) {
     starRates.push(orangeStar);
@@ -40,7 +40,11 @@ const LogementTitle = ({ logement }) => {
             alt={logement.host.name}
           />
         </div>
-        <div className="rating">{starRates}</div>
+        <div className="rating">
+          {starRates.map((star, index) => (
+            <span key={index} className={star}></span>
+          ))}
+        </div>
       </div>
     </section>
   );

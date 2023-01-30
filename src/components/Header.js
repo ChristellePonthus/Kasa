@@ -3,10 +3,10 @@ import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="logoHeader"></div>;
+    <header>
+      <div className="logoHeader"></div>
       <Navigation />
-    </div>
+    </header>
   );
 };
 

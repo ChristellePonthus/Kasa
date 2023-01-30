@@ -6,7 +6,9 @@ const Card = ({ logement }) => {
     <Link to={`./logement/:${logement.id}`}>
       <article className="card" key={logement.id}>
         <img className="img" src={logement.cover} alt={logement.title} />
-        <div className="cardTitle">{logement.title}</div>
+        <div className="filter">
+          <div className="cardTitle">{logement.title}</div>
+        </div>
       </article>
     </Link>
   );

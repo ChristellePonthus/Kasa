@@ -3,29 +3,26 @@
   src: url(../assets/fonts/Montserrat.ttf);
 }
 
-$font-1: "Montserrat", sans-serif;
+$font: "Montserrat", sans-serif;
 
 $color-1: #ff6060;
-$color-2: linear-gradient(
-  180deg,
-  rgba(255, 255, 255, 0) 0%,
-  rgba(0, 0, 0, 0.5) 100%
-);
+$color-2: #e3e3e3;
 $color-3: #f7f7f7;
 $color-4: #c4c4c4;
 $color-5: #f6f6f6;
-$color-6: #e3e3e3;
+$color-6: #000000;
 $white: #ffffff;
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  // border: 1px solid purple;
 }
 
 body {
   background: $white;
-  font-family: $font-1;
+  font-family: $font;
 }
 li {
   list-style-type: none;
