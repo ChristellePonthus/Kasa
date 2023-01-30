@@ -1,26 +1,20 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const useFetchAPI = (props) => {
+const useFetchAPI = (url) => {
   const [data, setData] = useState([]);
-  console.log("props", props);
 
   useEffect(() => {
-    fetch("logements.json")
-      .then(function (res) {
-        console.log("res : ", res);
-        res.json();
-      })
-      .then(() => {
-        setData(props);
-      })
-      .catch((error) => console.error(error));
-  });
+    if (!url) return;
 
-  console.log("data", data);
+    async function fetchData() {
+      const res = await fetch(url);
+      const data = await res.json();
+      setData(data);
+    }
+    fetchData();
+  }, [url]);
 
-  return <div></div>;
+  return data;
 };
 
 export default useFetchAPI;

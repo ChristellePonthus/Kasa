@@ -1,14 +1,14 @@
 import React from "react";
 import Card from "./Card";
-import Logements from "../assets/logements.json";
 import useFetchAPI from "../hooks/useFetchAPI";
 
 const Galery = () => {
-  useFetchAPI(Logements);
+  const accomodations = useFetchAPI("logements.json");
+  console.log("gallery", typeof accomodations, accomodations);
 
   return (
     <section className="gallery">
-      {Logements.map((logement, id) => (
+      {accomodations.map((logement, id) => (
         <Card key={id} logement={logement} />
       ))}
     </section>

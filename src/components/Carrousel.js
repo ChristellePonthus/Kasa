@@ -1,14 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-const Carrousel = ({ logement }) => {
+const Carrousel = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  console.log("carrousel props = ", props);
 
   const firstSlide = currentIndex === 0;
-  const lastSlide = currentIndex === logement.pictures.length - 1;
+  const lastSlide = currentIndex === props.pictures.length - 1;
   let newIndex;
   function goToPrev() {
-    newIndex = firstSlide ? logement.pictures.length - 1 : currentIndex - 1;
+    newIndex = firstSlide ? props.pictures.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   }
 
@@ -18,11 +19,11 @@ const Carrousel = ({ logement }) => {
   }
 
   return (
-    <section className="carrousel" key={logement.id}>
+    <section className="carrousel" key={props.id}>
       <div className="img">
-        <img src={logement.pictures[currentIndex]} alt={logement.title} />
+        <img src={props.pictures[currentIndex]} alt={props.title} />
       </div>
-      {logement.pictures.length > 1 ? (
+      {props.pictures.length > 1 ? (
         <>
           <button onClick={goToPrev} className="leftArrow" />
           <button onClick={goToNext} className="rightArrow" />
