@@ -10,7 +10,7 @@ const LogementDetail = () => {
   const idUrl = useParams(); // {id: ':c67ab8a7'}
   const selectedId = Object.values(idUrl).toString().substring(1); // c67ab8a7
 
-  useFetchAPI(Logements);
+  useFetchAPI(selectedId);
 
   return (
     <div>
