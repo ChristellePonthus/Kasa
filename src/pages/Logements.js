@@ -11,19 +11,31 @@ const Logements = () => {
   const idUrl = useParams(); // exemple = {id: ':c67ab8a7'}
   const selectedId = idUrl.id.substring(1); // exemple = c67ab8a7
 
-  const accomodation = useFetchAPI(`/logement/:${selectedId}`);
+  const accomodations = useFetchAPI("/logements.json");
 
   const navigate = useNavigate();
   useEffect(() => {
-    // if () {
-    //   navigate(<PageNotFound />);
-    // }
+    //   if (!accomodations.id.includes(accomodations.selectedId)) {
+    //     navigate(<PageNotFound />);
+    //   }
   });
 
   return (
     <div>
       <Header />
-      <LogementDetail selectedId={selectedId} accomodation={accomodation} />
+      {accomodations
+        .filter((accomodation) => accomodation.id.includes(selectedId))
+        .map((accomodation) => (
+          <LogementDetail key={selectedId} accomodation={accomodation} />
+        ))}
+      {/* {accomodations
+        .filter(
+          (accomodation) => !accomodation.id.includes(accomodations.selectedId)
+        )
+        .map(() => (
+          <PageNotFound />
+        ))}
+       */}
       <Footer />
     </div>
   );

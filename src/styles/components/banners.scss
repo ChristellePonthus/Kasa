@@ -11,6 +11,7 @@
     background-color: $color-6;
     opacity: 0.3;
     mix-blend-mode: darken;
+    z-index: 1;
   }
 }
 
@@ -26,17 +27,17 @@
     background: url(../../assets/img/homeBanner.png) center/cover;
     .filter {
       @extend %filter;
-      h2 {
-        color: #ffffff;
-        font-size: 48px;
-        font-weight: 500;
-        position: absolute;
-        z-index: 1;
-        margin: 0 auto;
-        left: 21%;
-        top: 37%;
-        height: 15%;
-      }
+    }
+    h2 {
+      color: #ffffff;
+      font-size: 48px;
+      font-weight: 500;
+      position: absolute;
+      z-index: 2;
+      margin: 0 auto;
+      left: 21%;
+      top: 37%;
+      height: 15%;
     }
   }
   .aboutBannerImg {
@@ -60,12 +61,12 @@
       border-radius: 10px;
       .filter {
         border-radius: 10px;
-        h2 {
-          font-size: 24px;
-          left: 5%;
-          top: 25%;
-          width: 80%;
-        }
+      }
+      h2 {
+        font-size: 24px;
+        left: 5%;
+        top: 25%;
+        width: 80%;
       }
     }
   }
@@ -73,11 +74,11 @@
     border-radius: 10px;
     .filter {
       border-radius: 10px;
-      h2 {
-        font-size: 24px;
-        left: 5%;
-        top: 25%;
-      }
+    }
+    h2 {
+      font-size: 24px;
+      left: 5%;
+      top: 25%;
     }
   }
 }

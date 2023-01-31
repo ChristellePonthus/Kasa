@@ -1,15 +1,15 @@
 import React from "react";
 
-const LogementTitle = ({ logement }) => {
+const LogementTitle = ({ accomodation }) => {
   //Loste des tags
-  const tags = logement.tags.map((tag, index) => (
+  const tags = accomodation.tags.map((tag, index) => (
     <li key={index} className="tag">
       {tag}
     </li>
   ));
 
   //Vote
-  const rate = parseInt(logement.rating);
+  const rate = parseInt(accomodation.rating);
   const starRates = [];
   const orangeStar = "orangeStar";
   const greyStar = "greyStar";
@@ -26,18 +26,18 @@ const LogementTitle = ({ logement }) => {
     <section className="logementTitle">
       <div className="titleAndTags">
         <div className="title">
-          <h2 className="title">{logement.title}</h2>
-          <p className="location">{logement.location}</p>
+          <h2 className="title">{accomodation.title}</h2>
+          <p className="location">{accomodation.location}</p>
         </div>
         <ul className="tags">{tags}</ul>
       </div>
       <div className="hostAndRate">
         <div className="host">
-          <div className="hostName">{logement.host.name}</div>
+          <div className="hostName">{accomodation.host.name}</div>
           <img
             className="hostPicture"
-            src={logement.host.picture}
-            alt={logement.host.name}
+            src={accomodation.host.picture}
+            alt={accomodation.host.name}
           />
         </div>
         <div className="rating">

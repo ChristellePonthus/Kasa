@@ -4,7 +4,6 @@ import useFetchAPI from "../hooks/useFetchAPI";
 
 const Galery = () => {
   const accomodations = useFetchAPI("logements.json");
-  console.log("gallery", typeof accomodations, accomodations);
 
   return (
     <section className="gallery">
