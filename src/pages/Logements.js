@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { render } from "react-dom";
+import { redirect, useParams, useRouteError } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import LogementDetail from "../components/LogementDetail";
@@ -13,12 +13,21 @@ const Logements = () => {
 
   const accomodations = useFetchAPI("/logements.json");
 
-  const navigate = useNavigate();
-  useEffect(() => {
-    //   if (!accomodations.id.includes(accomodations.selectedId)) {
-    //     navigate(<PageNotFound />);
-    //   }
-  });
+  const selectedAcc = accomodations.filter((accomodation) =>
+    accomodation.id.includes(selectedId)
+  );
+  console.log("selected acc = ", selectedAcc);
+
+  let count = 0;
+  for (const acc in accomodations) {
+    if (Object.hasOwnProperty.call(accomodations, acc)) {
+      const element = accomodations[acc];
+      if (element.id === selectedId) {
+        count++;
+        // console.log(selectedId, " ", element.id, " ", count);
+      }
+    }
+  }
 
   return (
     <div>
@@ -28,14 +37,6 @@ const Logements = () => {
         .map((accomodation) => (
           <LogementDetail key={selectedId} accomodation={accomodation} />
         ))}
-      {/* {accomodations
-        .filter(
-          (accomodation) => !accomodation.id.includes(accomodations.selectedId)
-        )
-        .map(() => (
-          <PageNotFound />
-        ))}
-       */}
       <Footer />
     </div>
   );

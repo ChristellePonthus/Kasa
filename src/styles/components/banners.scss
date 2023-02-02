@@ -69,16 +69,11 @@
         width: 80%;
       }
     }
-  }
-  .aboutBannerImg {
-    border-radius: 10px;
-    .filter {
+    .aboutBannerImg {
       border-radius: 10px;
-    }
-    h2 {
-      font-size: 24px;
-      left: 5%;
-      top: 25%;
+      .filter {
+        border-radius: 10px;
+      }
     }
   }
 }

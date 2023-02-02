@@ -1,4 +1,5 @@
 %button {
+  position: relative;
   height: 50px;
   border-radius: 5px;
   background-color: $color-1;
@@ -9,16 +10,17 @@
   padding: 20px;
   justify-content: space-between;
   color: $white;
-  %arrow {
+  z-index: 1;
+  %arrowDropdown {
     height: 25px;
     width: 25px;
   }
-  %arrowDown {
-    @extend %arrow;
+  %arrowDropdownDown {
+    @extend %arrowDropdown;
     background: url(../../assets/img/arrow.svg) center/cover;
   }
-  %arrowUp {
-    @extend %arrowDown;
+  %arrowDropdownUp {
+    @extend %arrowDropdownDown;
     transform: rotate(180deg);
   }
 }
@@ -27,6 +29,9 @@
   color: $color-1;
   background-color: $color-3;
   padding: 20px;
+  border-radius: 5px;
+  margin-top: -8px;
+  z-index: -1;
 }
 
 .aboutDropdowns {
@@ -38,10 +43,10 @@
         font-size: 24px;
       }
       .arrowDown {
-        @extend %arrowDown;
+        @extend %arrowDropdownDown;
       }
       .arrowUp {
-        @extend %arrowUp;
+        @extend %arrowDropdownUp;
       }
     }
     .dropdownDesc {
@@ -64,10 +69,10 @@
         font-size: 18px;
       }
       .arrowDown {
-        @extend %arrowDown;
+        @extend %arrowDropdownDown;
       }
       .arrowUp {
-        @extend %arrowUp;
+        @extend %arrowDropdownUp;
       }
     }
   }
@@ -75,5 +80,75 @@
     @extend %dropdownDesc;
     font-size: 18px;
     height: 250px;
+  }
+}
+
+@media (max-width: 376px) {
+  %dropdown {
+    margin: 20px;
+  }
+  %btn376 {
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+  }
+  %arrowDropdown376 {
+    height: 9px;
+    width: 15px;
+    background: url(../../assets/img/arrow.svg) center/cover;
+  }
+  %dropdownDesc376 {
+    font-size: 12px;
+  }
+  .aboutDropdowns {
+    .dropdown {
+      @extend %dropdown;
+      button {
+        @extend %btn376;
+        .dropdownTitle {
+          font-size: 13px;
+        }
+        .arrowDown {
+          @extend %arrowDropdown376;
+          background: url(../../assets/img/arrow.svg) center/cover;
+        }
+        .arrowUp {
+          @extend %arrowDropdown376;
+        }
+      }
+      .dropdownDesc {
+        @extend %dropdownDesc376;
+      }
+    }
+  }
+  .logementDropdowns {
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+    .dropdown {
+      @extend %dropdown;
+      margin-top: 0;
+      width: 100%;
+      button {
+        @extend %btn376;
+        .dropdownTitle {
+          font-size: 13px;
+        }
+        .arrowDown {
+          @extend %arrowDropdown376;
+          background: url(../../assets/img/arrow.svg) center/cover;
+        }
+        .arrowUp {
+          @extend %arrowDropdown376;
+        }
+      }
+    }
+    .dropdownDesc {
+      @extend %dropdownDesc376;
+      height: auto;
+      li {
+        font-size: 12px;
+      }
+    }
   }
 }

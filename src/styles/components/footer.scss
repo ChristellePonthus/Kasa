@@ -7,11 +7,22 @@
   background-color: #000000;
   color: #ffffff;
   .logoFooter {
-    width: 120px;
+    width: 122px;
     height: 40px;
     background: url(../../assets/img/logofooter.png) no-repeat;
     img {
       height: 40px;
+    }
+  }
+  .copyright {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 376px) {
+  .footer {
+    .copyright {
+      font-size: 12px;
     }
   }
 }

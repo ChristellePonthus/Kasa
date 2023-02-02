@@ -53,12 +53,58 @@
     .orangeStar {
       @extend %star;
       color: $color-1;
-      background: url(../../assets/img/orangeStar.png) center;
+      background: url(../../assets/img/orangeStar.png) center/cover;
     }
     .greyStar {
       @extend %star;
       color: $color-2;
-      background: url(../../assets/img/greyStar.png) center;
+      background: url(../../assets/img/greyStar.png) center/cover;
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .logementTitle {
+    margin: 15px 20px;
+    flex-direction: column;
+    .title {
+      font-size: 18px;
+    }
+    .location {
+      font-size: 14px;
+    }
+    .tags {
+      flex-wrap: wrap;
+      .tag {
+        font-size: 10px;
+        padding: 0 10px;
+        height: 20px;
+        border-radius: 5px;
+      }
+    }
+    .hostAndRate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      .host {
+        .hostName {
+          font-size: 12px;
+          margin-left: 100px;
+        }
+        .hostPicture {
+          height: 32px;
+          width: 32px;
+        }
+      }
+      .rating {
+        order: -1;
+        .orangeStar,
+        .greyStar {
+          height: 15px;
+          width: 15px;
+        }
+      }
     }
   }
 }

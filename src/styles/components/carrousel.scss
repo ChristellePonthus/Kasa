@@ -8,28 +8,55 @@
     object-fit: cover;
     border-radius: 25px;
   }
-  %arrow {
+  %arrowCarrousel {
     position: absolute;
-    top: 40%;
-    width: 50px;
-    height: 80px;
+    top: 165px;
+    width: 80px;
+    height: 50px;
     z-index: 1;
     border: none;
+    background: url(../../assets/img/arrow.svg) center/cover;
   }
   .leftArrow {
-    @extend %arrow;
+    @extend %arrowCarrousel;
     left: 25px;
-    background: url(../../assets/img/leftArrow.png);
+    transform: rotate(90deg);
   }
   .rightArrow {
-    @extend %arrow;
+    @extend %arrowCarrousel;
     right: 25px;
-    background: url(../../assets/img/rightArrow.png);
+    transform: rotate(-90deg);
   }
 }
 
 @media (max-width: 769px) {
   .carrousel {
     margin: 40px 20px;
+  }
+}
+
+@media (max-width: 376px) {
+  .carrousel {
+    margin: 30px 20px;
+    height: 255px;
+    img {
+      height: 255px;
+      border-radius: 10px;
+    }
+    %arrowCarrousel376 {
+      position: absolute;
+      top: 120px;
+      width: 20px;
+      height: 15px;
+      z-index: 1;
+    }
+    .leftArrow {
+      @extend %arrowCarrousel376;
+      left: 3px;
+    }
+    .rightArrow {
+      @extend %arrowCarrousel376;
+      right: 3px;
+    }
   }
 }
