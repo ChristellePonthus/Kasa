@@ -11,35 +11,45 @@ const Logements = () => {
   const idUrl = useParams(); // exemple = {id: ':c67ab8a7'}
   const selectedId = idUrl.id.substring(1); // exemple = c67ab8a7
 
-  const accomodations = useFetchAPI("/logements.json");
-
-  const selectedAcc = accomodations.filter((accomodation) =>
+  const accomodations = useFetchAPI("/logements.json").filter((accomodation) =>
     accomodation.id.includes(selectedId)
   );
-  console.log("selected acc = ", selectedAcc);
+  // console.log("accomodations", accomodations);
 
-  let count = 0;
-  for (const acc in accomodations) {
-    if (Object.hasOwnProperty.call(accomodations, acc)) {
-      const element = accomodations[acc];
-      if (element.id === selectedId) {
-        count++;
-        // console.log(selectedId, " ", element.id, " ", count);
+  const p1 = Promise.resolve(accomodations);
+
+  let idExist = false;
+  const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      for (let i = 0; i < accomodations.length; i++) {
+        if (selectedId === accomodations[i].id) {
+          resolve((idExist = true));
+        } else {
+          resolve((idExist = false));
+        }
       }
-    }
-  }
+    }, 3000);
+  });
 
-  return (
-    <div>
-      <Header />
-      {accomodations
-        .filter((accomodation) => accomodation.id.includes(selectedId))
-        .map((accomodation) => (
-          <LogementDetail key={selectedId} accomodation={accomodation} />
-        ))}
-      <Footer />
-    </div>
-  );
+  Promise.all([p1, p2]).then((values) => {
+    console.log("values p1 : ", values[0]);
+    console.log("values p2 : ", values[1]);
+    if (idExist) {
+      return (
+        <div>
+          <Header />
+          {accomodations
+            .filter((accomodation) => accomodation.id.includes(selectedId))
+            .map((accomodation) => (
+              <LogementDetail key={selectedId} accomodation={accomodation} />
+            ))}
+          <Footer />
+        </div>
+      );
+    } else {
+      return <PageNotFound />;
+    }
+  });
 };
 
 export default Logements;
