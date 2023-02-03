@@ -63,10 +63,35 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 1026px) {
+  .logementTitle {
+    margin: 30px 70px;
+  }
+}
+
+@media (max-width: 769px) {
+  .logementTitle {
+    .title {
+      font-size: 30px;
+    }
+    .hostAndRate {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .rating {
+        .orangeStar,
+        .greyStar {
+          height: 25px;
+          width: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
   .logementTitle {
     margin: 15px 20px;
-    flex-direction: column;
     .title {
       font-size: 18px;
     }
@@ -85,7 +110,6 @@
     .hostAndRate {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       margin-top: 10px;
       .host {
         .hostName {
@@ -98,11 +122,40 @@
         }
       }
       .rating {
-        order: -1;
         .orangeStar,
         .greyStar {
           height: 15px;
           width: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .logementTitle {
+    flex-direction: column;
+    .hostAndRate {
+      flex-direction: row;
+      align-items: center;
+      .host {
+        .hostName {
+          margin-left: 80px;
+        }
+      }
+      .rating {
+        order: -1;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .logementTitle {
+    .hostAndRate {
+      .host {
+        .hostName {
+          margin-left: 60px;
         }
       }
     }

@@ -24,6 +24,11 @@ const Carrousel = ({ accomodation }) => {
           src={accomodation.pictures[currentIndex]}
           alt={accomodation.title}
         />
+        <div className="pictureNumber">
+          <p>
+            {currentIndex + 1}/{accomodation.pictures.length}
+          </p>
+        </div>
       </div>
       {accomodation.pictures.length > 1 ? (
         <>

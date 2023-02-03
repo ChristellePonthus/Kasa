@@ -11,7 +11,7 @@
     height: 340px;
     width: 340px;
     border-radius: 10px;
-    margin: 25px 30px;
+    margin: 25px 20px;
     transition: 0.3s;
     .img {
       height: 100%;
@@ -49,16 +49,39 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 1025px) {
   .gallery {
-    margin: 15px;
-    padding: 0;
-    background: none;
+    margin: 50px;
+    padding: 50px 0;
     .card {
       height: 335px;
       width: 335px;
-      margin: 0;
-      margin-bottom: 20px;
+      margin: 20px 0;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .gallery {
+    margin: 20px;
+    padding: 0;
+    background: none;
+    .card {
+      margin: 10px 0;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .gallery {
+    .card {
+      height: 280px;
+      width: 280px;
+      .filter {
+        .cardTitle {
+          font-size: 16px;
+        }
+      }
     }
   }
 }

@@ -8,6 +8,14 @@
     object-fit: cover;
     border-radius: 25px;
   }
+  .pictureNumber {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    color: $white;
+    font-size: 18px;
+    font-weight: 500;
+  }
   %arrowCarrousel {
     position: absolute;
     top: 165px;
@@ -29,13 +37,29 @@
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1026px) {
   .carrousel {
-    margin: 40px 20px;
+    margin: 40px 60px;
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 769px) {
+  .carrousel {
+    margin: 40px 50px;
+    height: 350px;
+    img {
+      height: 350px;
+      border-radius: 10px;
+    }
+    .leftArrow,
+    .rightArrow {
+      width: 60px;
+      height: 35px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
   .carrousel {
     margin: 30px 20px;
     height: 255px;
@@ -43,7 +67,10 @@
       height: 255px;
       border-radius: 10px;
     }
-    %arrowCarrousel376 {
+    .pictureNumber {
+      font-size: 16px;
+    }
+    %arrowCarrousel426 {
       position: absolute;
       top: 120px;
       width: 20px;
@@ -51,11 +78,11 @@
       z-index: 1;
     }
     .leftArrow {
-      @extend %arrowCarrousel376;
+      @extend %arrowCarrousel426;
       left: 3px;
     }
     .rightArrow {
-      @extend %arrowCarrousel376;
+      @extend %arrowCarrousel426;
       right: 3px;
     }
   }
