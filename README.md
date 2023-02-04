@@ -21,7 +21,7 @@ Ce projet a été créé avec **Create React App**, par le biais de la commande 
 ### `Composition du projet`
 
 - Le fichier logements.json a été placé dans le dossier **public**.
-- Les routes sont définies dans le fichier [AppRouter.js](src\AppRouter.js)
+- Les routes sont définies dans le fichier _AppRouter.js_
 - Les styles ont été définis avec la méthode **Sass**.
 
 Voici ce que contiennent les différents dossiers :
