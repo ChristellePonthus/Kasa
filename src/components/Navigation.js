@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+// Composant affichant le menu sur chaque page
+
 const Navigation = () => {
   return (
     <div className="navigation">

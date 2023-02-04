@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Composant affichant les vignettes pour chaque logement,
+// incluant un lien vers une page affichant les détails
+
 const Card = ({ logement }) => {
   return (
     <Link to={`./logement/:${logement.id}`}>

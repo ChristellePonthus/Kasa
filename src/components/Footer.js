@@ -1,5 +1,7 @@
 import React from "react";
 
+// Composant affichant les données du pied de page
+
 const Footer = () => {
   return (
     <div className="footer">

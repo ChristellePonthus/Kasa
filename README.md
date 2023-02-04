@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+### Projet 7 du parcours Dev Web avec Openclassrooms
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Créez une application web de location immobilière avec React
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### `Mission`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La société Kasa souhaite une refonte complète de son site web, en passant à React pour le Front-End. Le design a été réalisé via des [maquettes sur Figma](https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=3%3A0).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### `Création`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ce projet a été créé avec **Create React App**, par le biais de la commande _npx create-react-app kasa_
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Composition du projet`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Le fichier logements.json a été placé dans le dossier **public**.
+- Les routes sont définies dans le fichier [AppRouter.js](src\AppRouter.js)
+- Les styles ont été définis avec la méthode **Sass**.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Voici ce que contiennent les différents dossiers :
 
-### `npm run eject`
+- Dossier **assets** : un dossier **fonts** et un dossier **img**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Dossier **components** : tous les composants nécessaires au fonctionnement de l'application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Dossier **hooks** : un hook personnalisé permettant les appels à l'API.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Dossier **pages** : les pages principales de l'application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Dossier **styles** : les différents styles utilisés.

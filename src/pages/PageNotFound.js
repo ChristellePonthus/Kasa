@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
+// Affichage de la page d'erreur en cas d'url ou d'id incorrect
+
 const PageNotFound = () => {
   return (
     <div>

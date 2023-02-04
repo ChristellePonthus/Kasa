@@ -4,7 +4,10 @@ import Dropdowns from "../components/Dropdowns";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
+//Affichage de la page A propos par ses différents composants
+
 const About = () => {
+  // Données envoyées au composant Dropdown
   const aboutDropdowns = [
     {
       title: "Fiabilité",

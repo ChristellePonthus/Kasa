@@ -15,3 +15,32 @@
     margin-bottom: 160px;
   }
 }
+
+@media (max-width: 768px) {
+  .error {
+    margin: 50px;
+    .errorCode {
+      font-size: 200px;
+    }
+    .errorMsg {
+      font-size: 25px;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .error {
+    margin: 50px;
+    .errorCode {
+      font-size: 96px;
+    }
+    .errorMsg {
+      font-size: 18px;
+      margin-bottom: 100px;
+    }
+    .homeLink {
+      font-size: 14px;
+    }
+  }
+}

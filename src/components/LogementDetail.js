@@ -3,6 +3,9 @@ import Carrousel from "./Carrousel";
 import LogementTitle from "./LogementTitle";
 import Dropdowns from "./Dropdowns";
 
+// Composant affichant les différents composants correspondant aux détails
+// de chaque logement, selon les données reçues de la page Logements.js
+
 const LogementDetail = (props) => {
   const selectedId = props.selectedId;
   const accomodation = props.accomodation;
@@ -10,19 +13,18 @@ const LogementDetail = (props) => {
   return (
     <div>
       <Carrousel key={selectedId} accomodation={accomodation} />
-      <LogementTitle key={props.selectedId} accomodation={accomodation} />
+      <LogementTitle key={selectedId} accomodation={accomodation} />
 
-      {/* Appel des Dropdowns */}
       <section className="logementDropdowns">
         <Dropdowns
-          key={props.selectedId}
+          key={selectedId}
           title={"Description"}
-          description={props.accomodation.description}
+          description={accomodation.description}
         />
         <Dropdowns
-          key={props.selectedId}
+          key={selectedId}
           title={"Equipements"}
-          description={props.accomodation.equipments}
+          description={accomodation.equipments}
         />
       </section>
     </div>

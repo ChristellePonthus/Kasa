@@ -1,14 +1,18 @@
 import React from "react";
 
+// Composant affichant pour chaque logement, selon les données reçues
+// depuis LogementDetail.js, son titre, ses tags,
+// les informations de l'hôte et les votes
+
 const LogementTitle = ({ accomodation }) => {
-  //Loste des tags
+  // Récupération de la liste des tags
   const tags = accomodation.tags.map((tag, index) => (
     <li key={index} className="tag">
       {tag}
     </li>
   ));
 
-  //Vote
+  // Récupération des votes
   const rate = parseInt(accomodation.rating);
   const starRates = [];
   const orangeStar = "orangeStar";

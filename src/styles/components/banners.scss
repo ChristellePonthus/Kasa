@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   border-radius: 25px;
+  position: relative;
   %filter {
     height: 100%;
     width: 100%;
@@ -23,7 +24,6 @@
   margin: 0 100px;
   .homeBannerImg {
     @extend %bannerImg;
-    position: relative;
     background: url(../../assets/img/homeBanner.png) center/cover;
     .filter {
       @extend %filter;
@@ -42,7 +42,6 @@
   }
   .aboutBannerImg {
     @extend %bannerImg;
-    position: relative;
     background: url(../../assets/img/aboutBanner.png) center/cover;
     .filter {
       @extend %filter;
@@ -72,12 +71,9 @@
 }
 
 @media (max-width: 426px) {
-  %banner426 {
+  .banner {
     margin: 0 20px;
     height: 111px;
-  }
-  .banner {
-    @extend %banner426;
     .homeBannerImg {
       border-radius: 10px;
       .filter {
@@ -88,6 +84,7 @@
         left: 5%;
         top: 25%;
         width: 80%;
+        white-space: pre-line;
       }
     }
     .aboutBannerImg {

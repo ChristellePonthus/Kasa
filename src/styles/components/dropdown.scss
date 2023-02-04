@@ -14,10 +14,10 @@
   %arrowDropdown {
     height: 25px;
     width: 25px;
+    background: url(../../assets/img/arrow.svg) center/cover;
   }
   %arrowDropdownDown {
     @extend %arrowDropdown;
-    background: url(../../assets/img/arrow.svg) center/cover;
   }
   %arrowDropdownUp {
     @extend %arrowDropdownDown;
@@ -79,7 +79,6 @@
   .dropdownDesc {
     @extend %dropdownDesc;
     font-size: 18px;
-    height: auto;
   }
 }
 
@@ -98,14 +97,20 @@
 }
 
 @media (max-width: 769px) {
+  %btn768 {
+    height: 35px;
+    %arrow768 {
+      height: 15px;
+      width: 20px;
+    }
+  }
   .aboutDropdowns {
     .dropdown {
       button {
-        height: 35px;
+        @extend %btn768;
         .arrowDown,
         .arrowUp {
-          height: 15px;
-          width: 20px;
+          @extend %arrow768;
         }
       }
       .dropdownDesc {
@@ -115,14 +120,11 @@
   }
   .logementDropdowns {
     .dropdown {
-      margin: 0;
-      width: 45%;
       button {
-        height: 35px;
+        @extend %btn768;
         .arrowDown,
         .arrowUp {
-          height: 15px;
-          width: 20px;
+          @extend %arrow768;
         }
       }
     }
@@ -137,35 +139,31 @@
   %dropdown {
     margin: 20px;
   }
-  %btn376 {
+  %btn425 {
     height: 30px;
-    width: 100%;
     padding: 10px;
   }
-  %arrowDropdown376 {
+  %arrowDropdown425 {
     height: 9px;
     width: 15px;
-  }
-  %dropdownDesc376 {
-    font-size: 12px;
   }
   .aboutDropdowns {
     .dropdown {
       @extend %dropdown;
       button {
-        @extend %btn376;
+        @extend %btn425;
         .dropdownTitle {
           font-size: 13px;
         }
         .arrowDown {
-          @extend %arrowDropdown376;
+          @extend %arrowDropdown425;
         }
         .arrowUp {
-          @extend %arrowDropdown376;
+          @extend %arrowDropdown425;
         }
       }
       .dropdownDesc {
-        @extend %dropdownDesc376;
+        font-size: 12px;
       }
     }
   }
@@ -178,24 +176,21 @@
       margin-top: 0;
       width: 100%;
       button {
-        @extend %btn376;
+        @extend %btn425;
         .dropdownTitle {
           font-size: 13px;
         }
         .arrowDown {
-          @extend %arrowDropdown376;
+          @extend %arrowDropdown425;
         }
         .arrowUp {
-          @extend %arrowDropdown376;
+          @extend %arrowDropdown425;
         }
       }
     }
-    .dropdownDesc {
-      @extend %dropdownDesc376;
-      height: auto;
-      li {
-        font-size: 12px;
-      }
+    .dropdownDesc,
+    li {
+      font-size: 12px;
     }
   }
 }

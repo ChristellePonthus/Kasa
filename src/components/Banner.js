@@ -1,5 +1,7 @@
 import React from "react";
 
+// Composant affichant la bannière selon les données reçues des pages l'utilisant
+
 const Banner = (props) => {
   return (
     <div className="banner">
